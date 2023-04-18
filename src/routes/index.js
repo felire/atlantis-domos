@@ -7,6 +7,6 @@ router.get('/', function(req, res, next) {
   res.json({ title: 'Express' });
 });
 
-router.get('/water_tank', waterTankController.updateWaterTankInfo);
+router.post('/water_tank', waterTankController.updateWaterTankInfo);
 
 module.exports = router

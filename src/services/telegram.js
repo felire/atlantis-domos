@@ -1,8 +1,10 @@
 const TelegramBot = require('node-telegram-bot-api');
 
-const token = '5962803048:AAH7lYAR0SQ1zb0iQ52zuZgKlblZFf-3kn4';
+const token_render_prod = '5962803048:AAH7lYAR0SQ1zb0iQ52zuZgKlblZFf-3kn4';
 
-const bot = new TelegramBot(token, {polling: true});
+const token_test = '6028989962:AAGaWlVlKGM5BwRXzN9IYPKlOw_Pgi_ktag';
+
+const bot = new TelegramBot(token_render_prod, {polling: true});
 
 const ATLANTIS_GROUP_ID = -1001902013434;
 // bot.onText(/\/start (.+)/, (msg, match) => {
@@ -17,21 +19,9 @@ const ATLANTIS_GROUP_ID = -1001902013434;
 //     bot.sendMessage(chatId, "Thanks for contacting me");
 //   });
 
-// Matches "/echo [whatever]"
-// bot.onText(/\/echo (.+)/, (msg, match) => {
-//     // 'msg' is the received Message from Telegram
-//     // 'match' is the result of executing the regexp above on the text content
-//     // of the message
-  
-//     console.log(msg);
-//     console.log(match);
-//     const chatId = msg.chat.id;
-//     const resp = match[1]; // the captured "whatever"
-  
-//     // send back the matched "whatever" to the chat
-//     bot.sendMessage(chatId, resp);
-//   });
-
+const sendMessage = (message) => {
+    bot.sendMessage(ATLANTIS_GROUP_ID, message);
+}
 //   bot.on('message', (msg) => {
 //     console.log(msg);
 //     const chatId = msg.chat.id;
@@ -46,5 +36,6 @@ const ATLANTIS_GROUP_ID = -1001902013434;
 
 module.exports = {
     bot,
-    ATLANTIS_GROUP_ID
+    ATLANTIS_GROUP_ID,
+    sendMessage
 }

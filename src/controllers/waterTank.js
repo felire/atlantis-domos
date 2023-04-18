@@ -1,6 +1,6 @@
-const {ATLANTIS_GROUP_ID, bot} = require('../services/telegram');
+const waterTank = require('../models/waterTank');
 exports.updateWaterTankInfo = async (req, res) => {
-  const percentage = req.body.percentage
-  bot.sendMessage(ATLANTIS_GROUP_ID, `Queda un ${percentage}% de agua en el tanque`)
-  res.sendStatus(200)
+  const distance = req.body.distance;
+  waterTank.handleWaterTank(distance);
+  res.sendStatus(200);
 }
