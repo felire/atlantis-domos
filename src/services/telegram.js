@@ -22,7 +22,7 @@ const ATLANTIS_GROUP_ID = -1001902013434;
 const sendMessage = (message) => {
     bot.sendMessage(ATLANTIS_GROUP_ID, message);
 }
-// Pruebo proceso de blablabla
+// Pruebo proceso de blablablablablalballasLDDAS
 //   bot.on('message', (msg) => {
 //     console.log(msg);
 //     const chatId = msg.chat.id;
